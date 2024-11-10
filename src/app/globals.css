@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.background {
+  background: radial-gradient(circle at 30% 50%, #3b0764, #100317 80%);
+  height: 100vh; /* Full screen */
+  width: 100%;
+  overflow: scroll;
+  position: relative;
+  color: white;
+}
+.background::before {
+  content: "";
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url('/stars.png'); 
+  background-size: cover;
+  opacity: 0.3;
+}
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.circle1 {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: 10%;
+}
+
+.circle2 {
+  width: 200px;
+  height: 200px;
+  bottom: 15%;
+  right: 15%;
+}
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.1s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
